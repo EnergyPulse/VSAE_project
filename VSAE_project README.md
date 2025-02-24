@@ -11,12 +11,6 @@ To improve **CNC machine monitoring**, your system will now include:
 🔸 **ACS712** (Hall-Effect Current Sensor) – Monitors spindle motor power consumption  
 🔸 **VL53L1X** (Time-of-Flight Sensor) – Measures tool wear by tracking small displacement changes  
 
-Would you like **a system architecture diagram** and **ESP32 sensor interfacing guide**? 🚀
-
-user
-yes please
-
-ChatGPT
 ### **📌 CNC Predictive Maintenance System – Architecture & ESP32 Sensor Interfacing**  
 
 This guide includes:  
@@ -33,24 +27,6 @@ I'll generate an architecture diagram showing:
 🔹 **Sensor connections** for angle, vibration, temperature, and audio  
 🔹 **Edge AI processing on Jetson Nano**  
 🔹 **Data flow to InfluxDB & Grafana**  
-
-I'll create this now. 🎨
-
-ChatGPT
-{"prompt":"A system architecture diagram for a CNC predictive maintenance system integrating multiple sensors with an ESP32 microcontroller. The diagram should include the following components:\n\n- **ESP32** as the central data acquisition unit\n- **AS5600** (Magnetic Induction Angle Sensor) connected via I2C\n- **SPH0655LM4H-1** (PDM Ultrasonic Microphone) connected via I2S\n- **BME688** (Environmental Sensor for Temperature, Humidity, Pressure, and Gas) connected via I2C\n- **INMP441** (MEMS Omnidirectional Microphone) connected via I2S\n- **MPU-6050** (6 DOF IMU for Vibration and Motion Detection) connected via I2C\n- **MLX90640** (Thermal Camera) connected via I2C\n- **ACS712** (Hall-Effect Current Sensor) connected via Analog input\n- **VL53L1X** (Time-of-Flight Sensor) connected via I2C\n- **Jetson Nano** performing Edge AI processing and real-time anomaly detection\n- **InfluxDB** database storing sensor time-series data\n- **Grafana** dashboard visualizing live CNC machine health metrics\n\nThe diagram should clearly show how each sensor connects to the ESP32 and how data is transmitted to Jetson Nano and InfluxDB.","size":"1792x1024"}
-
-ChatGPT
-[File]: dalle-generations/file-VGdZyeUqrSkdwkK67SfYqv-51ce9a68-f4e1-4eda-89f5-b47aec00af65.webp
-
-ChatGPT
-
-DALL·E displayed 1 images. The images are already plainly visible, so don't repeat the descriptions in detail. Do not list download links as they are available in the ChatGPT UI already. The user may download the images by clicking on them, but do not mention anything about downloading to the user.
-
-ChatGPT
-Here's the **CNC Predictive Maintenance System Architecture Diagram**. It shows:  
-✅ **ESP32** handling sensor data acquisition  
-✅ **Jetson Nano** for Edge AI anomaly detection  
-✅ **InfluxDB + Grafana** for real-time visualization  
 
 ---
 
@@ -69,12 +45,7 @@ Here's the **CNC Predictive Maintenance System Architecture Diagram**. It shows:
 | ACS712               | Analog       | A0 (GPIO36)    |
 | VL53L1X              | I2C          | SDA=21, SCL=22 |
 
-Next, would you like **ESP32 code** to acquire data from these sensors? 🚀
 
-user
-yes
-
-ChatGPT
 ### **📌 ESP32 Code for Multi-Sensor Data Acquisition**  
 This script:  
 ✅ Reads data from **AS5600, SPH0655LM4H-1, BME688, INMP441, MPU-6050, MLX90640, ACS712, and VL53L1X**  
@@ -238,12 +209,7 @@ void sendDataToInfluxDB() {
 ✅ **Integrate this with Jetson Nano** for **real-time anomaly detection**  
 ✅ **Enable Grafana Alerts** for **sensor failures & deviations**  
 
-Would you like **Jetson Nano AI-based anomaly detection code**? 🤖
 
-user
-yes
-
-ChatGPT
 ### **📌 Jetson Nano AI-Based Anomaly Detection for CNC Machine Monitoring**  
 This guide includes:  
 ✅ **AI model for detecting anomalies** in CNC machine sensor data  
@@ -371,12 +337,7 @@ while True:
 ✅ Deploy this on **Jetson Nano** for real-time CNC machine monitoring  
 ✅ **Train a Deep Learning Model** (LSTM/Autoencoder) for more precise anomaly detection  
 
-Would you like **a deep learning model (LSTM) for more accurate anomaly detection**? 🤖
 
-user
-yes
-
-ChatGPT
 ### **📌 Deep Learning-Based CNC Anomaly Detection Using LSTM (Jetson Nano)**
 This approach uses a **Long Short-Term Memory (LSTM) neural network** to detect **sensor anomalies** in real-time.
 
@@ -533,12 +494,7 @@ while True:
 ✅ **Set threshold dynamically** (adaptive anomaly detection)  
 ✅ **Expand to include visual alerts (LED or buzzer on ESP32)**  
 
-Would you like **a Grafana dashboard setup for real-time visualization**? 📊
 
-user
-Yes please, please also provide instructions to Deploy LSTM model on Jetson Nano
-
-ChatGPT
 ### **📌 Deploying LSTM Model on Jetson Nano & Real-Time Grafana Dashboard for CNC Monitoring**  
 This guide covers:  
 ✅ **Deploying the trained LSTM model on Jetson Nano**  
@@ -696,12 +652,7 @@ sudo systemctl enable grafana-server
 ✅ **Grafana dashboard displays live CNC sensor data**  
 ✅ **Alerts trigger on anomaly detection (Telegram bot)**  
 
-Would you like **a mobile-friendly Grafana setup** for CNC monitoring on your phone? 📱
 
-user
-Sure
-
-ChatGPT
 ### **📌 Mobile-Friendly Grafana Setup for CNC Monitoring**  
 
 This guide ensures **real-time CNC machine monitoring on your smartphone** 📱 using **Grafana’s mobile access** and **Telegram alerts**.  
@@ -819,18 +770,7 @@ sudo systemctl restart grafana-server
 ✅ **Receive real-time Telegram alerts for anomalies**  
 ✅ **Secure external access to Grafana**  
 
-Would you like **SMS alerts** in addition to Telegram? 📲
 
-user
-No thanks, I would like to introduce the concept of federated learning over machines
-
-ChatGPT
-User wants to introduce the concept of federated learning over machines in the CNC machine monitoring system.
-
-ChatGPT
-Model set context updated.
-
-ChatGPT
 ### **📌 Introducing Federated Learning for CNC Machine Monitoring**  
 
 Federated Learning (FL) will allow multiple CNC machines to collaboratively train an AI model **without sharing raw data**, enhancing **privacy and security**.  
@@ -985,18 +925,7 @@ python3 server.py
 ✅ **Secure, decentralized model training without sharing raw data**  
 ✅ **Global AI model improves over time**  
 
-Would you like to **integrate Grafana to visualize FL model performance?** 📊
 
-user
-yes
-
-ChatGPT
-User wants to integrate Grafana to visualize Federated Learning model performance in the CNC machine monitoring system.
-
-ChatGPT
-Model set context updated.
-
-ChatGPT
 ### **📌 Integrating Grafana for Federated Learning (FL) Model Performance Visualization**  
 
 This guide explains how to **monitor and visualize FL model performance** in **Grafana** using **InfluxDB** as a time-series database.  
